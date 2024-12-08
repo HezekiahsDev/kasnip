@@ -1,0 +1,123 @@
+/* Importing Inter font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* General Styles */
+body {
+  font-family: "Inter", sans-serif; /* Updated to Inter font */
+  color: #255b52; /* Text color inspired by one of the dominant colors */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("/assets/images/katsnip.jpg");
+  background-size: cover;
+  background-position: center center; /* Center the background image */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adding blur effect to background */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  filter: blur(10px); /* Adjust blur intensity */
+  z-index: -1; /* Behind the content */
+}
+
+/* Teal overlay for a cohesive look */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(38, 185, 170, 0.4); /* Teal semi-transparent overlay */
+  z-index: -1; /* Behind the content */
+}
+
+/* Logo Styling */
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  animation: roll 5s linear infinite; /* Rolling animation */
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Rolling Animation */
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Styling */
+.btn {
+  background-color: #ef5c2a; /* Bright orange for buttons */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-title {
+  animation: fadeIn 1s ease-out forwards;
+  color: #f7ab5a; /* Light orange inspired by the palette */
+}
+
+.animate-fade {
+  animation: fadeIn 2s ease-out forwards;
+  color: #ffdcb8; /* Soft peach tone for fade-in elements */
+}
+
+.animate-bounce {
+  animation: bounce 1.5s infinite;
+}
