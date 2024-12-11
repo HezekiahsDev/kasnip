@@ -1,26 +1,19 @@
-/* Importing Inter font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-
 /* General Styles */
 body {
   font-family: "Inter", sans-serif; /* Updated to Inter font */
   color: #255b52; /* Text color inspired by one of the dominant colors */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   margin: 0;
   background-image: url("/assets/images/katsnip.jpg");
   background-size: cover;
   background-position: center center; /* Center the background image */
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrolling but allow vertical scrolling */
 }
 
 /* Adding blur effect to background */
 body::before {
   content: "";
-  position: absolute;
+  position: fixed; /* Fixes the background blur to cover the viewport */
   top: 0;
   left: 0;
   right: 0;
@@ -33,19 +26,128 @@ body::before {
 /* Teal overlay for a cohesive look */
 body::after {
   content: "";
-  position: absolute;
+  position: fixed; /* Keeps the overlay stationary */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(38, 185, 170, 0.4); /* Teal semi-transparent overlay */
+  background: rgba(38, 185, 170, 0.4);
   z-index: -1; /* Behind the content */
 }
 
-/* Logo Styling */
+/* Section Styling */
+section {
+  padding: 80px 20px; /* Adds consistent spacing for all sections */
+  min-height: 100vh; /* Ensures each section takes at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  
+  );
+  padding: 60px 15px;
+  color: #ffffff;
+}
+
+.hero-section {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Slight white overlay for readability */
+}
+
+.tokenomics-section {
+  background: linear-gradient(
+    135deg,
+    rgba(112, 198, 185, 0.8),
+    rgba(255, 91, 2, 0.8),
+    rgba(255, 209, 173, 0.8));
+  padding: 60px 15px;
+  color: #ffffff;
+  
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: #00d834;
+  margin-bottom: 20px;
+}
+
+/*Tokenomics styling*/
+.tokenomics-item {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(9, 9, 11, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.tokenomics-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fabe1b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.tokenomics-item h4 > span {
+  height: 8px;
+  width: 25px;
+  display: inline-block;
+  background-color: #00d834;
+  margin-right: 10px;
+  transform: translateY(-2px);
+  border-radius: 2px;
+}
+
+.tokenomics-item p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.can-mx {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.chrt-tct {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.chrt-tct h5 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fabe1b;
+  margin-bottom: 10px;
+}
+
+.chrt-tct h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cta-section {
+  background-color: #255b52;
+  color: #fff;
+}
+
 .logo-container {
   display: flex;
   justify-content: center;
+  z-index: 1; /* Ensure the logo is above the background layers */
+  position: relative; /* Ensure it stacks correctly with pseudo-elements */
 }
 
 .logo {
@@ -53,6 +155,7 @@ body::after {
   height: auto;
   animation: roll 5s linear infinite; /* Rolling animation */
   transition: transform 0.3s ease;
+  z-index: 2; /* Keeps the logo above the container */
 }
 
 .logo:hover {
@@ -67,6 +170,10 @@ body::after {
   to {
     transform: rotate(360deg);
   }
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 /* Button Styling */
@@ -120,4 +227,61 @@ body::after {
 
 .animate-bounce {
   animation: bounce 1.5s infinite;
+}
+
+.roadmap-section {
+  background: linear-gradient(
+    135deg,
+    rgba(112, 198, 185, 0.8),
+    rgba(255, 91, 2, 0.8),
+    rgba(255, 209, 173, 0.8));
+  padding: 60px 15px;
+  color: #ffffff;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: #00d834;
+  margin-bottom: 20px;
+}
+
+.roadmap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.roadmap-item {
+  background: rgba(9, 9, 11, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.roadmap-item:hover {
+  transform: translateY(-5px);
+}
+
+.roadmap-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fabe1b;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .roadmap-item {
+    padding: 15px;
+  }
+
+  .roadmap-content h4 {
+    font-size: 16px;
+  }
 }
