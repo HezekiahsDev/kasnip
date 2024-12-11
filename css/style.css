@@ -45,8 +45,6 @@ section {
   align-items: center;
   text-align: center;
 
-  
-  );
   padding: 60px 15px;
   color: #ffffff;
 }
@@ -65,10 +63,10 @@ section {
     135deg,
     rgba(112, 198, 185, 0.8),
     rgba(255, 91, 2, 0.8),
-    rgba(255, 209, 173, 0.8));
+    rgba(255, 209, 173, 0.8)
+  );
   padding: 60px 15px;
   color: #ffffff;
-  
 }
 
 .section-title h2 {
@@ -234,7 +232,8 @@ section {
     135deg,
     rgba(112, 198, 185, 0.8),
     rgba(255, 91, 2, 0.8),
-    rgba(255, 209, 173, 0.8));
+    rgba(255, 209, 173, 0.8)
+  );
   padding: 60px 15px;
   color: #ffffff;
 }
